@@ -1,0 +1,31 @@
+﻿@model DemoShop.Models.db.Category
+@{
+	ViewData["Title"] = "UpdDB";
+}
+
+//method is get api
+//asp-action = "ShowUpd" is get api
+//asp-action = "UpdateCategory" is post api (fucntion in CategoryController)
+<form method="get" asp-controller="Category" asp-action="UpdateCategory">
+	<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+	<input type="hidden" asp-for="CategoryId"/>
+	<div class="form-group">
+		<label asp-for="CategoryName" class="control-label"></label>
+		<input asp-for="CategoryName" class="form-control"/>
+		<span class="text-danger" asp-validation-for="CategoryName"></span>
+	</div>
+
+	<button type="submit" class="btn btn-primary" 
+	onclick="return confirm('Do you want to update this Category?')">Update</button>
+	<button type="reset" class="btn btn-primary">Reset</button>
+</form>
+<div>
+	<a asp-action="Index" class="text-warning">
+		Back to List
+	</a>
+</div>
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

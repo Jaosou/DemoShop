@@ -1,0 +1,22 @@
+﻿@model DemoShop.Models.db.Category
+@{
+	ViewData["Title"] = "Create";
+}
+
+
+<h1>
+	Insert Data
+</h1>.
+
+<form asp-controller="Category" asp-action="Create" method="post">
+	
+	<div class="form-group">
+		<label asp-for="CategoryName"></label>
+		<input type="text" asp-for="CategoryName" class="form-control">
+		<span asp-validation-for="CategoryName" class="text-danger"></span>
+	</div>
+
+	<button type="submit" class="btn btn-primary">Save</button>
+	<button type="reset" class=" btn btn-primary">Reset</button>
+
+</form>
