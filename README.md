@@ -4,7 +4,9 @@ Scaffold-DbContext "Server=.\SQLEXPRESS;Database=DemoShop;Trusted_Connection=Tru
 
 ## Create Database
 use DemoShop
+
 go
+
 CREATE TABLE Customer (
     CustomerID INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
     FirstName VARCHAR(100) NOT NULL,    
@@ -21,6 +23,7 @@ CREATE TABLE Sale (
     CustomerID INT NOT NULL,                      
     FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID)   
 );
+
 CREATE TABLE SaleBook (
     SaleBookID INT PRIMARY KEY NOT NULL, 
     SaleID INT NOT NULL,                
@@ -32,8 +35,8 @@ CREATE TABLE SaleBook (
 );
 
 ## Insatll Packages
-Microsoft.EntityFrameworkCore
-Microsoft.EntityFrameworkCore.SqlServer
-Microsoft.EntityFrameworkCore.Design
-Microsoft.EntityFrameworkCore.Tools
-Microsoft.VisualStudio.Web.CodeGeneration.Design
+- Microsoft.EntityFrameworkCore
+- Microsoft.EntityFrameworkCore.SqlServer
+- Microsoft.EntityFrameworkCore.Design
+- Microsoft.EntityFrameworkCore.Tools
+- Microsoft.VisualStudio.Web.CodeGeneration.Design
