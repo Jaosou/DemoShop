@@ -30,3 +30,10 @@ CREATE TABLE SaleBook (
     FOREIGN KEY (SaleID) REFERENCES Sale(SaleID),  
     FOREIGN KEY (BookID) REFERENCES Book(BookID)   
 );
+
+## Insatll Packages
+Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Design
+Microsoft.EntityFrameworkCore.Tools
+Microsoft.VisualStudio.Web.CodeGeneration.Design
